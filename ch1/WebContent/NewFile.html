@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+<script>
+    var gNum=1;
+    function changeCss(){
+        
+        var style_1 = {
+            "background-color":"blue",
+            "border":"2px solid #f00"
+        }
+        var style_2 = {
+            "background-color":"red",
+            "border":"2px dashed #f00"
+        }
+        
+        var style_3 = {
+            "background-color":"yellow",
+            "border":"2px dashed #f00"
+        }
+        
+        var style_none={
+            "display: none"
+
+        }
+
+        var sel1 ="#wrap_"+gNum;
+        var stl1 = eval("style_"+gNum);
+        $(sell).prev().css(style_none);
+        $(sell).css(stl1);
+        gNum++;
+
+        
+    }
+
+</script>
+</head>
+<body>
+    <div id="wrap_1">
+        <h1>박스1</h1>
+			<p>내용1</p>
+			<p class="txt">내용2</p>
+			<p>내용3</p>
+			<p>내용4</p>
+	</div>
+    
+    <div id="wrap_2">
+        <h1>박스2</h1>
+			<p>내용1</p>
+			<p class="txt">내용2</p>
+			<p>내용3</p>
+			<p>내용4</p>
+	</div>
+
+    <div id="wrap_3">
+        <h1>박스3</h1>
+			<p>내용1</p>
+			<p class="txt">내용2</p>
+			<p>내용3</p>
+			<p>내용4</p>
+	</div>
+    
+    
+    <button oneclick="changeCss()"><</button>
+    <button oneclick="changeCss()">></button>
+    
+    
+    
+    
+</body>
+</html>

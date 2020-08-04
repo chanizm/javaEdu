@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 함수 </title>
+<script>
+	function Checkinformation(name, age, phonebook) {
+		this.userName = name;
+		this.userAge = age;
+		this.userPhonebook = phonebook;
+		this.minage;
+		this.maxage;
+
+		this.getInfo = function() {
+			var str = ""
+				str += "이름: " + this.userName + ", ";
+				str += "만 나이: " + this.userAge + ", ";
+				str += "전화번호: " + this.userPhonebook + "<br>";
+				return  str;
+		}
+		this.getAge = function( ) {
+			this.minage = (this.userAge - 2);
+
+            if(this.minage >18){
+                return "성인입니다";
+            }else{
+                return "미성년자입니다";
+            }
+        }
+			
+		this.getphonebook = function() {
+			var str = new String(this.userPhonebook).replace("-","","-","");
+            return str;
+		}
+    }
+			
+	
+
+	var jang = new Checkinformation("장보리", 20, "010-1234-56789");
+	var park = new Checkinformation("박달재", 20, "010-7894-5612");
+	console.log(jang);
+	console.log(park);
+
+	document.write(jang.getInfo());
+	document.write(jang.getAge());
+</script>
+</head>
+<body>
+</body>
+</html>
+</body>
+</html>

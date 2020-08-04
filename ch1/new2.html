@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function() {
+             // 임의의 객체에 대해 이벤트 장착 가능
+             document.getElementById("colorW").onclick = function() {
+                 document.bgColor = "white";
+             }
+             document.getElementById("colorG").onclick = function() {
+                 document.bgColor = "#00ff00";
+             }
+             document.getElementById("colorR").onclick = function() {
+                 document.bgColor = "rgb(100%, 0%, 0%)";
+             }
+             // 이벤트 종류 연습
+             document.getElementById("btnHello").onclick = function() { // on click
+                 document.getElementById("show").innerText = "안녕하신가";
+             }
+             document.getElementById("btnCalc").ondblclick = function() { // on double click
+                 var ss = "연산 결과는" + (10 + 20);
+                 document.getElementById("show").innerText = ss;
+             }
+             document.getElementById("btnName").onmouseover = function() { // on mouse over
+                 document.getElementById("show").innerText = "'이름 알기'에 커서를 대면 해당 문구가 뜹니다";
+             }
+             document.getElementById("btnName").onmouseout = function() { // on mouse over
+                 document.getElementById("show").innerText = "";
+             }
+             // tag 고유 기능 해제
+             document.getElementById("sbs_link").onclick = function() {
+                 sbs();
+                 //event.preventDefault(); // 이 이벤트가 실행되면 태그 기능이 정지됨
+                 return false; // 마찬가지로 태그 기능이 정지됨
+             }
+             document.getElementById("btnDisp").onclick = display;
+             
+             // select 버튼에 관한 이벤트
+             var sdata = document.getElementById("sel");
+             //document.getElementById("sel").onclick = function(event){
+             document.getElementById("sel").onchange = function(event){
+                 document.getElementById("show").innerText = sdata.value;  
+             }
+        }
+        function sbs() {
+             alert("서울 방송 SBS입니다! 확인을 누르면 홈페이지로 이동합니다");
+             alert("서울 방송 SBS입니다! 확인을 누르면 홈페이지로 이동합니다");
+        }
+        var msg = "나무늘보 만세";
+        var i = 0;
+        function display() {
+             document.getElementById("disp").innerText = msg.charAt(i)
+             i++;
+             if (msg.length === i) i = 0; // "msg에서 정의된 자바스크립트 만세를 1개씩 끊어서 출력함"
+             setTimeout("display()",500); // 1000ms가 1초, 시간에 따라 자동으로 출력함
+        }
+   </script>
+   
+   
+   출처: https://note.espriter.net/1120 [espriter]
+</head>
+<body>
+    ** 이벤트 경험 **
+    <br>
+    <input type="button" value="흰색" id="colorW">
+    <input type="button" value="녹색" id="colorG">
+    <input type="button" value="적색" id="colorR">
+    <hr>
+    <button id="btnHello">인사하기(click)</button>
+    <button id="btnCalc">계산하기(dbclick)</button>
+    <button id="btnName">이름알기(mouseover)</button>
+    <br>
+    <a href="http://www.sbs.co.kr/" id="sbs_link">앵커 태그 클릭</a>
+    <br>
+    <br>
+    <button id="btnDisp">한글자씩 출력</button>
+    <br>
+    <br>
+    <select id ="sel">
+    <option value="프로그래머">프로그래머</option>
+    <option value="웹 디자이너">웹 디자이너</option>
+    <option value="프로게이머">프로게이머</option>   
+    </select>
+    <hr width="5">
+    <div id="show">출력장소1</div>
+    <div id="disp" style="font-size: 24px">출력장소2</div>
+
+
+출처: https://note.espriter.net/1120 [espriter]
+</body>
+</html>
